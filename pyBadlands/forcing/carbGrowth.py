@@ -20,7 +20,10 @@ from scipy.ndimage.filters import gaussian_filter
 from scipy import interpolate
 from scipy.spatial import cKDTree
 from collections import OrderedDict
-from legacycontour import _cntr as cntr
+try:
+    from legacycontour import _cntr as cntr
+except ImportError:
+    from matplotlib import _cntr as cntr
 
 class carbGrowth:
     """
