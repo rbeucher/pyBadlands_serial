@@ -624,7 +624,7 @@ class forceSim:
                 sdispX[insIDs] = interpolate.interpn( (self.regX, self.regY), disprX, dpsXY, method='linear')
                 sdispY[insIDs] = interpolate.interpn( (self.regX, self.regY), disprY, dpsXY, method='linear')
 
-        if self.time3d > 0. and (self.injected_disps is not None or self.Map_disp[event] != None):
+        if self.time3d and (self.injected_disps is not None or self.Map_disp[event] != None):
             rate = (self.next_disp - time) / (self.T_disp[event,1] - self.T_disp[event,0])
             assert rate > 0
             dispX = dispX * rate
