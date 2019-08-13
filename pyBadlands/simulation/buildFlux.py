@@ -14,7 +14,7 @@ import sys
 import time
 import numpy as np
 from matplotlib import path
-from buildMesh import _get_reference_elevation
+from .buildMesh import _get_reference_elevation
 
 from pyBadlands import (elevationTIN)
 
