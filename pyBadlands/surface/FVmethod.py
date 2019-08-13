@@ -14,7 +14,7 @@ import time
 import numpy
 from pyBadlands.libUtils import FVframe
 import warnings
-import triangle
+import tribad
 
 class FVmethod:
     """
@@ -69,7 +69,7 @@ class FVmethod:
 
         # Build the voronoi diagram (dual of the delaunay)
         walltime = time.clock()
-        Vor_pts, Vor_edges = triangle.voronoi(self.node_coords)
+        Vor_pts, Vor_edges = tribad.voronoi(self.node_coords)
         if verbose:
             print(" - build the voronoi diagram ", time.clock() - walltime)
 

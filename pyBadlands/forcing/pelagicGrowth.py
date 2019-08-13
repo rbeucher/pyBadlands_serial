@@ -13,7 +13,7 @@ simulation based on forcing parameter: depth.
 import os
 import numpy
 import pandas
-import triangle
+import tribad
 from pyBadlands.libUtils import ORmodel
 from scipy.ndimage.filters import gaussian_filter
 from scipy import interpolate

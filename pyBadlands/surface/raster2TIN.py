@@ -18,7 +18,7 @@ import errno
 import pandas
 import os.path
 import warnings
-import triangle
+import tribad
 from uuid import uuid4
 from shutil import rmtree
 from scipy import interpolate
@@ -219,7 +219,7 @@ class raster2TIN:
 
         # Create TIN
         tinPts = numpy.vstack(( self.bounds, self.edges))
-        self.tinMesh = triangle.triangulate( dict(vertices=tinPts),'Dqa'+str(self.areaDel))
+        self.tinMesh = tribad.triangulate( dict(vertices=tinPts),'Dqa'+str(self.areaDel))
         ptsTIN = self.tinMesh['vertices']
 
         # Check extent

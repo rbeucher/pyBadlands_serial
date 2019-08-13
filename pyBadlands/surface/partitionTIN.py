@@ -12,7 +12,7 @@ This module proposes 2 methods of triangular irregular network (TIN) partitionin
 
 import time
 import numpy
-import triangle
+import tribad
 from pyBadlands.libUtils import FASTloop
 
 from numpy import random
@@ -254,7 +254,7 @@ def overlap(X, Y, nbprocX, nbprocY, overlapLen, verbose=False):
 
     # Build local TIN
     data = numpy.column_stack((X,Y))
-    localTIN = triangle.triangulate(dict(vertices=data[globIDs,:2]),' ')
+    localTIN = tribad.triangulate(dict(vertices=data[globIDs,:2]),' ')
 
     if verbose:
         print(" - partition TIN including shadow zones ", time.clock() - walltime)

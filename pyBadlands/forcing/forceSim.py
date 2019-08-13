@@ -13,7 +13,7 @@ processes related to climate, tectonic and sea level.
 import os
 import numpy
 import pandas
-import triangle
+import tribad
 from pyBadlands.libUtils import ORmodel
 from scipy.ndimage.filters import gaussian_filter
 from scipy import interpolate
@@ -891,7 +891,7 @@ class forceSim:
                 nTe = mTe
 
         # Based on new points build the triangulation
-        newTIN = triangle.triangulate( dict(vertices=newXY),'Da'+str(area))
+        newTIN = tribad.triangulate( dict(vertices=newXY),'Da'+str(area))
         # If some points have been added during the triangulation update the TIN
         # interpolate neighbouring parameters to these new points
         if len(newTIN['vertices'][:,0]) > len(newXY[:,0]):
